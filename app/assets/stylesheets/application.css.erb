@@ -1,0 +1,63 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Philosopher:400,700|Marmelad&subset=latin,latin-ext,cyrillic,cyrillic-ext);
+
+body
+{
+  padding: 60px 0px;
+  font-weight: 700;
+  text-decoration: none !important;
+  font-family: 'Philosopher', 'sans-serif';
+  font-size: 1.3em;
+  background: -webkit-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* W3C */
+}
+
+.center{text-align: center;}
+
+#back
+{
+  padding-top: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: block;
+  margin: 0 !important;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+  color: #fff;
+  font-family: 'Philosopher', 'sans-serif';
+  text-shadow: 0 0 10px rgba(0,0,0,0.9);
+}
+
+a
+{
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+a:hover
+{
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 0 10px rgba(0,0,0,0.9);
+}
+
+.center{text-align: center;}
