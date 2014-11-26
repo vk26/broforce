@@ -10,7 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_tree .
+
 
 
 
@@ -27,6 +27,7 @@
  * @package PARALLAX LOGIN.
  */
 
+
 $(document).ready(function() {
     $(document).mousemove(function(event) {
         TweenLite.to($("body"), 
@@ -38,3 +39,4 @@ $(document).ready(function() {
         })
     })
 })
+;
