@@ -15,3 +15,5 @@ div.container.center
   | Выполнен выход: 
   = link_to current_user.github_url do
     = current_user.nickname
+
+= raise current_user.inspect

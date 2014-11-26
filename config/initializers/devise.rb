@@ -230,8 +230,7 @@ Devise.setup do |config|
   config.sign_out_via = :delete
 
   # ==> OmniAuth
-  config.omniauth :github, '3737e1073b034f615bf8', '2c26b6918a7a91b0baa549d1502c534aba221834', scope: 'user'
-
+  config.omniauth :github, '73f053e1becaf610dbb8', '9dbc685abd195e7e32d7b2514cf0e0cc0bfc4ad7', scope: 'user'
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
