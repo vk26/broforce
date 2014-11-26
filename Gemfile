@@ -9,6 +9,7 @@ gem 'unicorn'
 
 # Auth
 gem 'devise'
+gem 'omniauth-github'
 
 # Admin Panel
 # gem 'activeadmin', github: 'gregbell/active_admin'
