@@ -4,3 +4,14 @@ div.container.center
       h1 Здесь будет форма
       hr
       h2 Временный файл и экшен
+
+
+- unless user_signed_in?
+  = link_to "Войти через GitHub", omniauth_authorize_path(User, :github)
+  br
+- else
+  = link_to current_user.github_url do
+    = image_tag current_user.image
+  | Выполнен выход: 
+  = link_to current_user.github_url do
+    = current_user.nickname
