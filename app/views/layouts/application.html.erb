@@ -8,6 +8,18 @@
 </head>
 <body>
 
+  <% unless user_signed_in? %>
+    <%= link_to "Войти через GitHub", omniauth_authorize_path(User, :github) %><br />
+  <% else %>
+    <%= link_to current_user.github_url do %>
+      <%= image_tag current_user.image %>
+    <% end %>
+    Выполнен выход:
+    <%= link_to current_user.github_url do %>
+      @<%= current_user.nickname %>
+    <% end %>
+  <% end %>
+
 <%= yield %>
 
 </body>
