@@ -11,5 +11,4 @@
 // about supported directives.
 //
 //= require jquery.vide
-//= require turbolinks
 //= require_tree .

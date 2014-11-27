@@ -46,6 +46,7 @@ gem 'bootstrap-kaminari-views'
 gem 'flutie'
 gem 'holder_rails'
 gem 'devise-basecamper'
+gem 'rails_config'
 
 # Images
 gem "paperclip"

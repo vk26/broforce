@@ -230,7 +230,14 @@ Devise.setup do |config|
   config.sign_out_via = :delete
 
   # ==> OmniAuth
-  config.omniauth :github, '73f053e1becaf610dbb8', '9dbc685abd195e7e32d7b2514cf0e0cc0bfc4ad7', scope: 'user'
+
+  if Rails.env == 'development'
+    config.omniauth :github, Settings.local_client_id, Settings.local_client_secret, scope: 'user'
+  elsif Rails.env == 'production'
+    config.omniauth :github, Settings.heroku_client_id, Settings.heroku_client_secret, scope: 'user'
+  end
+
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
