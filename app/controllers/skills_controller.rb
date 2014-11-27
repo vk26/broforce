@@ -4,7 +4,7 @@ class SkillsController < ApplicationController
 
   def new
     if @skill
-      redirect_to :edit
+      redirect_to edit_skill_path
     else
       @skill = Skill.new
     end
@@ -12,13 +12,13 @@ class SkillsController < ApplicationController
 
   def edit
     unless @skill
-      redirect_to :action => :new
+      redirect_to new_skill_path
     end
   end
 
   def show
     unless @skill
-      redirect_to :action => :new
+      redirect_to new_skill_path
     end
   end
 
@@ -32,7 +32,7 @@ class SkillsController < ApplicationController
     if @skill.save
       redirect_to skill_path
     else
-      render :action => :edit
+      render 'edit' # TODO: проработать кейс с ошибкой
     end
   end
 
@@ -43,7 +43,7 @@ class SkillsController < ApplicationController
     if @skill.update(skill_params)
       redirect_to skill_path
     else
-      render :action => :edit
+      render 'edit' # TODO: проработать кейс с ошибкой
     end
   end
 
