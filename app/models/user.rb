@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :omniauthable,
     omniauth_providers: [:github]
+  has_one :skill
 
   def self.from_github(auth)
     where(uid: auth.uid).first_or_create do |user|

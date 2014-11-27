@@ -23,5 +23,17 @@ html
   body data-vide-bg="/loop.mp4" data-vide-options="loop: true, muted: false, position: 100% 100%"
 
     / = render './header'
+    - unless user_signed_in?
+      = link_to "Войти через GitHub", omniauth_authorize_path(User, :github)
+      br
+    - else
+      = link_to current_user.github_url do
+        = image_tag current_user.image
+      | Выполнен выход: 
+      = link_to current_user.github_url do
+        = current_user.nickname
+      = link_to "Моя анкета", edit_skill_path
+
+
     = yield
     / = render './footer'
