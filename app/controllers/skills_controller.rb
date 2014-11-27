@@ -38,7 +38,7 @@ class SkillsController < ApplicationController
 
   def update
     unless @skill
-      head :unprocessable_entity and return # @skill ещё заполнен
+      head :unprocessable_entity and return # @skill ещё не заполнен
     end
     if @skill.update(skill_params)
       redirect_to skill_path
@@ -49,7 +49,7 @@ class SkillsController < ApplicationController
 
   def destroy
     unless @skill
-      head :unprocessable_entity and return # @skill ещё заполнен
+      head :unprocessable_entity and return # @skill ещё не заполнен
     end
   end
 
