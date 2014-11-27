@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     only: :omniauth_callbacks
   resource :skill
   resources :users, only: [:index] do
-    resource :skill, only: [:show]
+    resource :skill, module: 'users', only: [:show]
   end
 end

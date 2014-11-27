@@ -18,7 +18,7 @@ class SkillsController < ApplicationController
 
   def show
     unless @skill
-      redirect_to :new
+      redirect_to :action => :new
     end
   end
 
@@ -59,11 +59,7 @@ class SkillsController < ApplicationController
     end
 
     def set_skill
-      @user = unless params[:user_id]
-                current_user
-              else
-                User.find(params[:user_id])
-              end
+      @user = current_user
       @skill = @user.skill
     end
 

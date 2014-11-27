@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
     omniauth_providers: [:github]
   has_one :skill
 
+  scope :with_skill, -> { includes(:skill).where.not(skills: { id: nil }) }
+
   def self.from_github(auth)
     where(uid: auth.uid).first_or_create do |user|
       user.password = Devise.friendly_token[0,20]
