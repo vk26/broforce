@@ -20,7 +20,8 @@ html
       = javascript_include_tag "application"
 
 
-  body
+  body data-vide-bg="assets/loop.mp4" data-vide-options="loop: true, muted: false, position: 100% 100%"
+
     / = render './header'
     = yield
     / = render './footer'

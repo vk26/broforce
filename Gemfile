@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '2.1.4'
-gem 'rails', '4.1.0'
+gem 'rails', '4.1.6'
 
 # Servers
 gem 'puma'
@@ -38,6 +38,7 @@ gem 'turbolinks'
 gem 'uglifier'
 gem 'jbuilder'
 gem 'jquery-turbolinks'
+gem 'vider', github: 'jFoxSingularity/vider'
 
 # Other gems
 gem 'kaminari'
