@@ -1,3 +1,36 @@
-| Кодеры:
-- @users.each do |user|
-  = link_to user.nickname, user_skill_path(user)
+div.container
+  div.row
+    h2 My Dear Friends
+
+div.carousel-reviews.broun-block
+  div.container
+    div.row
+      div.carousel.slide#carousel-reviews data-ride="carousel"
+
+        div.carousel-inner
+
+          div.item.active
+            - @users.each_slice(3) do |users_by_three|
+              - users_by_three.each do |user|
+                div.col-md-4.col-sm-6
+                  div.block-text.rel.zmin
+                    a title="" href="#"
+                      = user.nickname
+                    div.mark
+                      | My rating: 
+                      span.rating-input
+                        span.glyphicon.glyphicon-star data-value="0"
+                        span.glyphicon.glyphicon-star data-value="1"
+                        span.glyphicon.glyphicon-star data-value="2"
+                        span.glyphicon.glyphicon-star data-value="3"
+                        span.glyphicon.glyphicon-star-empty data-value="4"
+                        span.glyphicon.glyphicon-star-empty data-value="5"
+
+                    p
+                      | Never before has there been a good film portrayal of ancient Greece's favourite myth. So why would Hollywood start now? This latest attempt at bringing the son of Zeus to the big screen is brought to us by X-Men: The last Stand director Brett Ratner. If the name of the director wasn't enough to dissuade ...
+                    ins.ab.zmin.sprite.sprite-i-triangle.block
+                    div.person-text.rel
+                      img src=""
+                      a title="" href="#" Anna
+                      i
+                        | from Glasgow, Scotland
