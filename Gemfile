@@ -47,6 +47,7 @@ gem 'flutie'
 gem 'holder_rails'
 gem 'devise-basecamper'
 gem 'rails_config'
+gem 'humans'
 
 # Images
 gem "paperclip"
