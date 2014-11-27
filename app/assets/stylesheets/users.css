@@ -61,11 +61,11 @@
     z-index: 2;
 }
 .person-text a {
-    color: #ffcc00;
+    color: #747192;
     display: block;
     font-size: 14px;
     margin-top: 3px;
-    text-decoration: underline;
+    text-decoration: none;
 }
 .person-text i {
     color: #fff;

@@ -1,23 +1,45 @@
 div.container
   div.row
-    h2 My Dear Friends
+    div.col-md-12.center
+                        
+      div.intro-section
+      
+        h1.intro
+          | Желаете учавствовать в разработке
+          br
+          | OpenSource продуктов, но нет опыта?
+        h2.intro Тогда присоединяйтесь к нам!
+
+        br
+
+      - unless user_signed_in?
+        div.button
+          = link_to "Войти через GitHub", omniauth_authorize_path(User, :github), class: 'btn btn-lg btn-success'
+      - else
+        div.button
+          a.btn.btn-lg.btn-warning href="#" Выйти
+
+  br
+  div.row.center
+    h2 Наши мастера
 
 div.carousel-reviews.broun-block
   div.container
     div.row
       div.carousel.slide#carousel-reviews data-ride="carousel"
 
-        div.carousel-inner
+        div.carousel-inner.center
 
           div.item.active
+            / Метрод each_slice(3) делает перебор всего массива и складывает элементы в массивы по 3 штуки (users_by_three), которые содержат в себе по три пользователя
             - @users.each_slice(3) do |users_by_three|
+              / Далее каждый массив из трёх польователей вновь перебирается и мы получаем слайдер содержащий в себе несколько слайдов, по три пользователя в каждом
               - users_by_three.each do |user|
                 div.col-md-4.col-sm-6
-                  div.block-text.rel.zmin
-                    a title="" href="#"
-                      = user.nickname
+                  div.block-text.rel.zmin.high_opacity
+                    = link_to user.nickname, skill_path(user)
                     div.mark
-                      | My rating: 
+                      | Мастерство:  
                       span.rating-input
                         span.glyphicon.glyphicon-star data-value="0"
                         span.glyphicon.glyphicon-star data-value="1"
@@ -25,12 +47,11 @@ div.carousel-reviews.broun-block
                         span.glyphicon.glyphicon-star data-value="3"
                         span.glyphicon.glyphicon-star-empty data-value="4"
                         span.glyphicon.glyphicon-star-empty data-value="5"
-
                     p
-                      | Never before has there been a good film portrayal of ancient Greece's favourite myth. So why would Hollywood start now? This latest attempt at bringing the son of Zeus to the big screen is brought to us by X-Men: The last Stand director Brett Ratner. If the name of the director wasn't enough to dissuade ...
+                      = user.skill.about
                     ins.ab.zmin.sprite.sprite-i-triangle.block
                     div.person-text.rel
-                      img src=""
-                      a title="" href="#" Anna
+                      = image_tag current_user.image, style: 'width: 90px; height: 90px; border-radius: 50px;'
+                      = link_to user.nickname + ' (github)', user.github_url
                       i
                         | from Glasgow, Scotland
