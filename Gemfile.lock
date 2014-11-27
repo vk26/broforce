@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/jFoxSingularity/vider.git
-  revision: 27855b2fcd6d4fa162cc31819b282f22ea32b0a5
+  remote: git://github.com/Elanice/vider.git
+  revision: aeb991042f26b916ab58079523536559eb8f513a
   specs:
     vider (0.0.1)
       rails (>= 4.1.6)

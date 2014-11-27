@@ -38,7 +38,7 @@ gem 'turbolinks'
 gem 'uglifier'
 gem 'jbuilder'
 gem 'jquery-turbolinks'
-gem 'vider', github: 'jFoxSingularity/vider'
+gem 'vider', github: 'Elanice/vider'
 
 # Other gems
 gem 'kaminari'
