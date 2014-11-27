@@ -37,7 +37,7 @@ div.carousel-reviews.broun-block
               - users_by_three.each do |user|
                 div.col-md-4.col-sm-6
                   div.block-text.rel.zmin.high_opacity
-                    = link_to user.nickname, skill_path(user)
+                    = link_to user.nickname, user_skill_path(user.id)
                     div.mark
                       | Мастерство:  
                       span.rating-input
@@ -51,7 +51,7 @@ div.carousel-reviews.broun-block
                       = user.skill.about
                     ins.ab.zmin.sprite.sprite-i-triangle.block
                     div.person-text.rel
-                      = image_tag current_user.image, style: 'width: 90px; height: 90px; border-radius: 50px;'
+                      = image_tag user.image, style: 'width: 90px; height: 90px; border-radius: 50px;'
                       = link_to user.nickname + ' (github)', user.github_url
                       i
                         | from Glasgow, Scotland
