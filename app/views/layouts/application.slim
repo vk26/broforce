@@ -33,6 +33,7 @@ html
       = link_to current_user.github_url do
         = current_user.nickname
       = link_to "Моя анкета", skill_path
+      = link_to "[ред.]", edit_skill_path
 
 
     = yield
