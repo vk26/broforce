@@ -31,7 +31,7 @@ div.carousel-reviews.broun-block
         div.carousel-inner.center
           / Метрод each_slice(3) делает перебор всего массива и складывает элементы в массивы по 3 штуки (users_by_three), которые содержат в себе по три пользователя
           - @users.each_slice(3) do |users_by_three|
-            div.item.active
+            div class="#{if users_by_three.first.id == 1 then 'item active' else 'item'}"
               / Далее каждый массив из трёх польователей вновь перебирается и мы получаем слайдер содержащий в себе несколько слайдов, по три пользователя в каждом
               - users_by_three.each do |user|
                 div.col-md-4.col-sm-6
