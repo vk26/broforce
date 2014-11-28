@@ -9,25 +9,23 @@ div.navbar.navbar-fixed-top
 
     div.navbar-collapse.collapse.navbar-inverse-collapse
 
-      - if current_user
-
-        ul.nav.navbar-nav.navbar-right
-          - if current_user
-            li.dropdown
-              a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                = current_user.name.capitalize
-              ul.dropdown-menu.center style="padding: 15px;min-width: 250px;"
-                li
-                  = link_to current_user.nickname, current_user.github_url
-                  = link_to current_user.github_url do
-                    = image_tag current_user.image, height: 100
-                br
-                li
-                  div.button
-                    = link_to "Изменить навыки", edit_skill_path, class: 'btn btn-success'
-                br
-            li
-              a href="#" Выйти
-          - else
-            li
-              = link_to "Войти через GitHub", omniauth_authorize_path(User, :github)
+      ul.nav.navbar-nav.navbar-right
+        - if current_user
+          li.dropdown
+            a href="#" class="dropdown-toggle" data-toggle="dropdown"
+              = current_user.name.capitalize
+            ul.dropdown-menu.center style="padding: 15px;min-width: 250px;"
+              li
+                = link_to current_user.nickname, current_user.github_url
+                = link_to current_user.github_url do
+                  = image_tag current_user.image, height: 100
+              br
+              li
+                div.button
+                  = link_to "Изменить навыки", edit_skill_path, class: 'btn btn-success'
+              br
+          li
+            a href="#" Выйти
+        - else
+          li
+            = link_to "Войти через GitHub", omniauth_authorize_path(User, :github)

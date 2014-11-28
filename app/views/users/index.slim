@@ -12,12 +12,7 @@ div.container
 
         br
 
-      - unless user_signed_in?
-        div.button
-          = link_to "Войти через GitHub", omniauth_authorize_path(User, :github), class: 'btn btn-lg btn-success'
-      - else
-        div.button
-          a.btn.btn-lg.btn-warning href="#" Выйти
+        br
 
   br
   div.row.center
