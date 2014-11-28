@@ -38,7 +38,7 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'jbuilder'
 # gem 'jquery-turbolinks'
-gem 'vider', github: 'Elanice/vider'
+# gem 'vider', github: 'Elanice/vider'
 
 # Other gems
 gem 'kaminari'

@@ -13,14 +13,22 @@ html
       = stylesheet_link_tag "application", :media => "all"
       = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
       script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
-      script src="http://yandex.st/underscore/1.6.0/underscore-min.js"
+      / script src="http://yandex.st/underscore/1.6.0/underscore-min.js"
+      script src="http://yastatic.net/jquery-ui/1.11.2/jquery-ui.min.js"
+      script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"
       script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
-      script src="https://maps.googleapis.com/maps/api/js?v=3.exp"
+      / script src="https://maps.googleapis.com/maps/api/js?v=3.exp"
       
       = javascript_include_tag "application"
 
+      javascript:
+        $(function() {var BV = new $.BigVideo();
+          BV.init();
+          BV.show('loop.mp4',{ambient:true});
+        });
 
-  body data-vide-bg="/loop.mp4" data-vide-options="loop: true, muted: false, position: 100% 100%"
+
+  body
 
     = render './partials/header'
     = yield
