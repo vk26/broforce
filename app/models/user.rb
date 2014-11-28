@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :omniauthable,
-    omniauth_providers: [:github]
+  devise :database_authenticatable, :omniauthable, omniauth_providers: [:github]
   has_one :skill
 
   scope :with_skill, -> { includes(:skill).where.not(skills: { id: nil }) }
