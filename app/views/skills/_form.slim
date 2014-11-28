@@ -1,3 +1,68 @@
-= simple_form_for(skill, url: skill_path) do |f|
-  = f.input :about, as: :text, label: 'О себе'
-  = f.button :submit
+/ = simple_form_for(skill, url: skill_path) do |f|
+/   = f.input :about, as: :text, label: 'О себе'
+/   = f.button :submit
+
+
+
+form.form-horizontal
+  fieldset.white-text
+    / legend Подзаголовок формы
+    
+    / :about
+    div.form-group
+      label.col-lg-2.control-label for="textArea"
+        | Пара слов о себе:
+      div.col-lg-10
+        textarea.form-control#textArea rows="3"
+
+    div.form-group
+      label.col-lg-2.control-label for="inputAge"
+        | Возраст
+      div.col-lg-10
+        input.form-control#inputAge type="text" placeholder="Возраст"
+
+    div.form-group
+      label.col-lg-2.control-label for="inputCity"
+        | Город
+      div.col-lg-10
+        input.form-control#inputCity type="text" placeholder="Город"
+
+    h3 Особые умения
+    div.form-group
+      span.help-block.white-text
+        | Объектно-ориентированное программирование
+      div.col-lg-12
+        label
+          input#optionsRadios1 type="radio" name="optionsRadios" value="option1" checked=""
+            | Не знаю
+        label
+          input#optionsRadios2 type="radio" name="optionsRadios" value="option2"
+            | Плохо знаю
+        label
+          input#optionsRadios3 type="radio" name="optionsRadios" value="option2"
+            | Часто использую
+        label
+          input#optionsRadios4 type="radio" name="optionsRadios" value="option2"
+            | Знаю в совершестве
+
+    div.form-group
+      label.col-lg-2.control-label for="select" Использовал гемы:
+      div.col-lg-10
+        / select.form-control#select
+        /   option 1
+        /   option 2
+        /   option 3
+        /   option 4
+        /   option 5
+        / br
+        select.form-control multiple="true"
+          option Devise
+          option Paperclip
+          option Slim
+          option Simple form
+          option Rails_Admin/ActiveAdmin
+    
+
+    div.form-group
+      div.col-md-12
+        button.btn.btn-lg.btn-success type="submit" Сохранить
