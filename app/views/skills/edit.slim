@@ -13,7 +13,7 @@ div.container
 
 
   div.row.center
-    = simple_form_for :skill, url: skill_path, html: { class: 'form-horizontal' } do |f|
+    = simple_form_for :skill, url: skill_path, html: { class: 'form-horizontal' }, method: 'put' do |f|
       div.col-md-6.col-md-offset-3
         fieldset.white-text
           / legend Подзаголовок формы
@@ -23,7 +23,7 @@ div.container
             label.col-lg-2.control-label for="textArea"
               | Пара слов о себе:
             div.col-lg-10
-              textarea.form-control#textArea rows="3"
+              = f.text_area :about, as: :text , class: 'form-control', value: current_user.skill.about, rows: '4', style: "border-radius: 5px;"
 
           div.form-group
             label.col-lg-2.control-label for="inputAge"
@@ -41,13 +41,7 @@ div.container
           div.form-group
             label.col-lg-2.control-label for="select" Использовал гемы:
             div.col-lg-10
-              / select.form-control#select
-              /   option 1
-              /   option 2
-              /   option 3
-              /   option 4
-              /   option 5
-              / br
+
               select.form-control multiple="true"
                 option Devise
                 option Paperclip
@@ -55,102 +49,102 @@ div.container
                 option Simple form
                 option Rails_Admin/ActiveAdmin
       
-        h3 Особые умения
-    div.row.center
-      div.col-md-6
-        div.form-group
-          h4
-            | Объектно-ориентированное программирование
-          div.col-lg-12
-            div.radio
-              label.white-text
-                input#optionsRadios1 type="radio" name="optionsRadios" value="option1" checked=""
-                  | Не знаю
-            div.radio
-              label
-                input#optionsRadios2 type="radio" name="optionsRadios" value="option2"
-                  | Плохо знаю
-            div.radio
-              label
-                input#optionsRadios3 type="radio" name="optionsRadios" value="option2"
-                  | Часто использую
-            div.radio
-              label
-                input#optionsRadios4 type="radio" name="optionsRadios" value="option2"
-                  | Знаю в совершестве
-
-
-      div.col-md-6
-        div.form-group
-          h4
-            | Знаешь что такое MVC?
-          div.col-lg-12
-            div.radio
-              label
-                input#optionsRadios1 type="radio" name="optionsRadios" value="option1" checked=""
-                  | Не знаю
-            div.radio
-              label
-                input#optionsRadios2 type="radio" name="optionsRadios" value="option2"
-                  | Плохо знаю
-            div.radio
-              label
-                input#optionsRadios3 type="radio" name="optionsRadios" value="option2"
-                  | Спрашиваешь!
-            div.radio
-              label
-                input#optionsRadios4 type="radio" name="optionsRadios" value="option2"
-                  | Да как два пальца аб асфальт!
-
-
-    div.row.center style="padding-top: 50px;"
-      div.col-md-6
-        div.form-group
-          h4
-            | Что-нибудь знаешь о Git?
-          div.col-lg-12
-            div.radio
-              label
-                input#optionsRadios1 type="radio" name="optionsRadios" value="option1" checked=""
-                  | Не-а
-            div.radio
-              label
-                input#optionsRadios2 type="radio" name="optionsRadios" value="option2"
-                  | git add/git commit/git push/git pull
-            div.radio
-              label
-                input#optionsRadios3 type="radio" name="optionsRadios" value="option2"
-                  | Могу управлять ветками и мерджить
-            div.radio
-              label
-                input#optionsRadios4 type="radio" name="optionsRadios" value="option2"
-                  | Могу тетрис на git'е написать!
-
-
-      div.col-md-6
-        div.form-group
-          h4
-            | Использовал(-ла) Rvm/Rbenv?
-          div.col-lg-12
-            div.radio
-              label
-                input#optionsRadios1 type="radio" name="optionsRadios" value="option1" checked=""
-                  | Не знаю что это
-            div.radio
-              label
-                input#optionsRadios2 type="radio" name="optionsRadios" value="option2"
-                  | Основной функционал
-            div.radio
-              label
-                input#optionsRadios3 type="radio" name="optionsRadios" value="option2"
-                  | Знаю между ними разницу
-            div.radio
-              label
-                input#optionsRadios4 type="radio" name="optionsRadios" value="option2"
-                  | Настраиваю под проекты и серверное окружение
-
   div.row.center
-    div.col-md-12
-      br
+    div.col-md-6
       div.form-group
-        button.btn.btn-lg.btn-success type="submit" Сохранить
+        h4
+          | Объектно-ориентированное программирование
+        div.col-lg-12
+          div.radio
+            label.white-text
+              input#optionsRadios1 type="radio" name="optionsRadios" value="option1" checked=""
+                | Не знаю
+          div.radio
+            label
+              input#optionsRadios2 type="radio" name="optionsRadios" value="option2"
+                | Плохо знаю
+          div.radio
+            label
+              input#optionsRadios3 type="radio" name="optionsRadios" value="option2"
+                | Часто использую
+          div.radio
+            label
+              input#optionsRadios4 type="radio" name="optionsRadios" value="option2"
+                | Знаю в совершестве
+
+
+    div.col-md-6
+      div.form-group
+        h4
+          | Знаешь что такое MVC?
+        div.col-lg-12
+          div.radio
+            label
+              input#optionsRadios1 type="radio" name="optionsRadios" value="option1" checked=""
+                | Не знаю
+          div.radio
+            label
+              input#optionsRadios2 type="radio" name="optionsRadios" value="option2"
+                | Плохо знаю
+          div.radio
+            label
+              input#optionsRadios3 type="radio" name="optionsRadios" value="option2"
+                | Спрашиваешь!
+          div.radio
+            label
+              input#optionsRadios4 type="radio" name="optionsRadios" value="option2"
+                | Да как два пальца аб асфальт!
+
+
+  div.row.center style="padding-top: 50px;"
+    div.col-md-6
+      div.form-group
+        h4
+          | Что-нибудь знаешь о Git?
+        div.col-lg-12
+          div.radio
+            label
+              input#optionsRadios1 type="radio" name="optionsRadios" value="option1" checked=""
+                | Не-а
+          div.radio
+            label
+              input#optionsRadios2 type="radio" name="optionsRadios" value="option2"
+                | git add/git commit/git push/git pull
+          div.radio
+            label
+              input#optionsRadios3 type="radio" name="optionsRadios" value="option2"
+                | Могу управлять ветками и мерджить
+          div.radio
+            label
+              input#optionsRadios4 type="radio" name="optionsRadios" value="option2"
+                | Могу тетрис на git'е написать!
+
+
+    div.col-md-6
+      div.form-group
+        h4
+          | Использовал(-ла) Rvm/Rbenv?
+        div.col-lg-12
+          div.radio
+            label
+              input#optionsRadios1 type="radio" name="optionsRadios" value="option1" checked=""
+                | Не знаю что это
+          div.radio
+            label
+              input#optionsRadios2 type="radio" name="optionsRadios" value="option2"
+                | Основной функционал
+          div.radio
+            label
+              input#optionsRadios3 type="radio" name="optionsRadios" value="option2"
+                | Знаю между ними разницу
+          div.radio
+            label
+              input#optionsRadios4 type="radio" name="optionsRadios" value="option2"
+                | Настраиваю под проекты и серверное окружение
+                
+                
+
+  div.row.center style="padding-top: 50px;"
+    div.col-md-12
+      div.form-group
+        = f.submit 'Сохранить', class: 'btn btn-lg btn-success'

@@ -38,12 +38,14 @@ class SkillsController < ApplicationController
 
   def update
     unless @skill
+      raise 'asedv'
       head :unprocessable_entity and return # @skill ещё не заполнен
     end
     if @skill.update(skill_params)
       redirect_to skill_path
     else
       render 'edit' # TODO: проработать кейс с ошибкой
+
     end
   end
 
@@ -53,7 +55,7 @@ class SkillsController < ApplicationController
     end
   end
 
-  protected
+  private
     def check_user!
       redirect_to omniauth_authorize_path(User, :github) unless user_signed_in?
     end
