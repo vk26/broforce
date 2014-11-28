@@ -14,38 +14,25 @@ div.container
 
         br
 
-  br
-  div.row.center
-    h2 Наши мастера
 
-div.carousel-reviews.broun-block
-  div.container
-    div.row
-      div.carousel.slide#carousel-reviews data-ride="carousel"
 
-        div.carousel-inner.center
-          / Метрод each_slice(3) делает перебор всего массива и складывает элементы в массивы по 3 штуки (users_by_three), которые содержат в себе по три пользователя
-          - @users.each_slice(3) do |users_by_three|
-            div class="#{if users_by_three.first.id == 1 then 'item active' else 'item'}"
-              / Далее каждый массив из трёх польователей вновь перебирается и мы получаем слайдер содержащий в себе несколько слайдов, по три пользователя в каждом
-              - users_by_three.each do |user|
-                div.col-md-4.col-sm-6
-                  div.block-text.rel.zmin.high_opacity
-                    = link_to user.nickname, user_skill_path(user.id)
-                    div.mark
-                      | Мастерство:  
-                      span.rating-input
-                        span.glyphicon.glyphicon-star data-value="0"
-                        span.glyphicon.glyphicon-star data-value="1"
-                        span.glyphicon.glyphicon-star data-value="2"
-                        span.glyphicon.glyphicon-star data-value="3"
-                        span.glyphicon.glyphicon-star-empty data-value="4"
-                        span.glyphicon.glyphicon-star-empty data-value="5"
-                    p
-                      = user.skill.about
-                    ins.ab.zmin.sprite.sprite-i-triangle.block
-                    div.person-text.rel
-                      = image_tag user.image, style: 'width: 90px; height: 90px; border-radius: 50px;'
-                      = link_to user.nickname + ' (github)', user.github_url
-                      i
-                        | from Glasgow, Scotland
+
+
+  / Метрод each_slice(3) делает перебор всего массива и складывает элементы в массивы по 3 штуки (users_by_three), которые содержат в себе по три пользователя
+  - @users.each_slice(3) do |users_by_three|
+    div.row.center
+      / Далее каждый массив из трёх польователей вновь перебирается и мы получаем слайдер содержащий в себе несколько слайдов, по три пользователя в каждом
+      - users_by_three.each do |user|
+
+        div.col-md-4
+          div.back.user-info
+            h3
+              = link_to user.nickname, user_skill_path(user.id)
+            p
+              = image_tag user.image, style: 'width: 100px; height: 100px; border-radius: 50px;'
+            p
+              = link_to user.nickname + ' (github)', user.github_url
+            p
+              = user.skill.about
+            br
+    br
