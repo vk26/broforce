@@ -17,13 +17,13 @@ gem 'omniauth-github'
 
 # ORM
 gem 'mysql2'
-gem 'redis-rails'
-gem 'seed_dump'
+# gem 'redis-rails'
+# gem 'seed_dump'
 
 # Forms
 gem 'simple_form'
-gem 'tinymce-rails'
-gem 'tinymce-rails-langs'
+# gem 'tinymce-rails'
+# gem 'tinymce-rails-langs'
 
 # Markdown
 # gem 'redcarpet'
@@ -34,18 +34,17 @@ gem 'jquery-rails'
 gem 'coffee-rails'
 gem 'slim'
 gem 'sass-rails'
-gem 'turbolinks'
+# gem 'turbolinks'
 gem 'uglifier'
 gem 'jbuilder'
-gem 'jquery-turbolinks'
+# gem 'jquery-turbolinks'
 gem 'vider', github: 'Elanice/vider'
 
 # Other gems
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'flutie'
-gem 'holder_rails'
-gem 'devise-basecamper'
+# gem 'holder_rails'
 gem 'rails_config'
 gem 'humans'
 
@@ -53,10 +52,10 @@ gem 'humans'
 gem "paperclip"
 
 # Deploy
-gem 'capistrano'
-gem 'capistrano-rails'
-gem 'capistrano-rbenv'
-gem 'capistrano3-unicorn'
+# gem 'capistrano'
+# gem 'capistrano-rails'
+# gem 'capistrano-rbenv'
+# gem 'capistrano3-unicorn'
 
 
 group :test do
