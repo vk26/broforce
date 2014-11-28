@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
          :rememberable,
          :trackable,
          :omniauthable,
-           omniauth_providers: [:github]
+        omniauth_providers: [:github]
   has_one :skill
 
   scope :with_skill, -> { includes(:skill).where.not(skills: { id: nil }) }

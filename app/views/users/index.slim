@@ -15,9 +15,32 @@ div.container
         br
 
 
+    div.col-md-12.center
 
+      div
+        h2
+          | Вот несколько наших проектов
+    <div class="col-sm-6 col-md-4">
+      <div class="white-text center">
+        <img data-src="/images/projects/broforce.png" alt="100%x200" src="/images/projects/broforce.png" data-holder-rendered="true" style="height: 200px; width: auto; display: block; margin-left: auto; margin-right: auto;">
+        <div class="caption">
+          h3
+            a href="http://broforce.herokuapp.com" target="_blank" BroForce
+          <p>Тестовый проект для новичков. Позволяет на людей посмотреть и себя показать =)</p>
+          p
+            = link_to 'https://gitter.im/Elanice/broforce' do
+              = image_tag 'https://badges.gitter.im/Join Chat.svg'
+        </div>
+      </div>
+    </div>
+    
+    hr
 
-
+  div.row
+    div.col-md-12.center
+      h2
+        | Наши мастера искусств
+        br
   / Метрод each_slice(3) делает перебор всего массива и складывает элементы в массивы по 3 штуки (users_by_three), которые содержат в себе по три пользователя
   - @users.each_slice(3) do |users_by_three|
     div.row.center
