@@ -25,7 +25,7 @@ div.navbar.navbar-fixed-top
                   = link_to "Изменить навыки", edit_skill_path, class: 'btn btn-success'
               br
           li
-            a href="#" Выйти
+            = link_to "Выйти", destroy_user_session_path
         - else
           li
             = link_to "Войти через GitHub", omniauth_authorize_path(User, :github)
