@@ -12,42 +12,40 @@ div.container
 
 
 
+= simple_form_for :skill, url: skill_path, html: { class: 'form-horizontal' }, method: 'put' do |f|
   div.row.center
-    = simple_form_for :skill, url: skill_path, html: { class: 'form-horizontal' }, method: 'put' do |f|
-      div.col-md-6.col-md-offset-3
-        fieldset.white-text
-          / legend Подзаголовок формы
-          
-          / :about
-          div.form-group
-            label.col-lg-2.control-label for="textArea"
-              | Пара слов о себе:
-            div.col-lg-10
-              = f.text_area :about, as: :text , class: 'form-control', value: current_user.skill.about, rows: '4', style: "border-radius: 5px;"
+    div.col-md-6.col-md-offset-3
+      fieldset.white-text
 
-          div.form-group
-            label.col-lg-2.control-label for="inputAge"
-              | Возраст
-            div.col-lg-10
-              input.form-control#inputAge type="text" placeholder="Возраст"
+        div.form-group
+          label.col-lg-2.control-label for="textArea"
+            | Пара слов о себе:
+          div.col-lg-10
+            = f.text_area :about, as: :text , class: 'form-control', value: current_user.skill.about, rows: '4', style: "border-radius: 5px;"
 
-          div.form-group
-            label.col-lg-2.control-label for="inputCity"
-              | Город
-            div.col-lg-10
-              input.form-control#inputCity type="text" placeholder="Город"
+        div.form-group
+          label.col-lg-2.control-label for="inputAge"
+            | Возраст
+          div.col-lg-10
+            input.form-control#inputAge type="text" placeholder="Возраст"
+
+        div.form-group
+          label.col-lg-2.control-label for="inputCity"
+            | Город
+          div.col-lg-10
+            input.form-control#inputCity type="text" placeholder="Город"
 
 
-          div.form-group
-            label.col-lg-2.control-label for="select" Использовал гемы:
-            div.col-lg-10
+        div.form-group
+          label.col-lg-2.control-label for="select" Использовал гемы:
+          div.col-lg-10
 
-              select.form-control multiple="true"
-                option Devise
-                option Paperclip
-                option Slim
-                option Simple form
-                option Rails_Admin/ActiveAdmin
+            select.form-control multiple="true"
+              option Devise
+              option Paperclip
+              option Slim
+              option Simple form
+              option Rails_Admin/ActiveAdmin
       
   div.row.center
     div.col-md-6

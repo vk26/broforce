@@ -42,7 +42,8 @@ class SkillsController < ApplicationController
       head :unprocessable_entity and return # @skill ещё не заполнен
     end
     if @skill.update(skill_params)
-      redirect_to skill_path
+      # redirect_to skill_path
+      redirect_to root_path
     else
       render 'edit' # TODO: проработать кейс с ошибкой
 
