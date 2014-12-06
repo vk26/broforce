@@ -48,7 +48,7 @@ div.container
         div.col-md-4
           div.back.user-info
             h3
-              = link_to user.nickname, user_skill_path(user.id)
+              = link_to user.nickname, user_skill_path(user)
             p
               = image_tag user.image, style: 'width: 100px; height: 100px; border-radius: 50px;'
             p
