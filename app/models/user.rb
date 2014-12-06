@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :omniauthable,
         omniauth_providers: [:github]
   has_one :skill
+  has_and_belongs_to_many :projects
 
   scope :with_skill, -> { includes(:skill).where.not(skills: { id: nil }) }
 
