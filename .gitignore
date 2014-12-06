@@ -1,4 +1,5 @@
 /config/database.yml
+/config/setting.yml
 *.rbc
 capybara-*.html
 .rspec
