@@ -1,4 +1,8 @@
 div.container
 	div.intro-section	
 		div.col-md-12.center
-			h1.intro Project
+			= simple_form_for :project do |f|
+				= f.input :name, label: "Имя проекта"
+				= f.input :description, as: :text, label: "Описание"
+				= f.collection_check_boxes :user_ids, User.all, :id, :name, label: "Участники проекта"
+				= f.button :submit
