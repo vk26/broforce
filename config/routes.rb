@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index] do
     resource :skill, module: 'users', only: [:show]
   end
-  resources :projects, only:[:new, :edit]
+  resources :projects, only:[:new, :create, :edit, :delete]
 end
